@@ -9,3 +9,8 @@ coverage/
 Thumbs.db
 .vscode/
 .idea/
+# Object file
+*.o
+# Ada Library Information
+*.ali
+8f098b1c85eca229ea0ef8e9f33d19ebbceb0a8c
