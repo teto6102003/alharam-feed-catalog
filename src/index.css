@@ -329,3 +329,36 @@
   object-fit: contain;
   background: #fff;
 }
+
+
+/* Product photos */
+.product-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+
+  object-fit: contain;
+}
+
+/* Fade the default image only */
+.product-photo--default {
+  opacity: 0.22;
+}
+
+/* Keep the default image area clean */
+.photo-slot.has-default-photo {
+  background: #fffdf7;
+  border-style: solid;
+  border-color: #e5dfce;
+}
+
+/* Disable the old crossed-line placeholder decoration */
+.photo-slot.has-default-photo::before {
+  display: none;
+}
