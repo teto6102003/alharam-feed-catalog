@@ -71,6 +71,24 @@ const groups: ProductGroup[] = [
   },
 ];
 
+const productImages: Record<string, string> = {
+  'علف بادى نامى':
+    `${import.meta.env.BASE_URL}images/products/bady-namy-eman.jpg`,
+
+  'سوبر بادى':
+    `${import.meta.env.BASE_URL}images/products/bady-eman.jpg`,
+
+  'خلطة بط الهرم سوبر':
+    `${import.meta.env.BASE_URL}images/products/duck-super.jpg`,
+
+  'علف سوبر نامى':
+    `${import.meta.env.BASE_URL}images/products/namy-eman.jpg`,
+  
+  'خلطة مواشي سوبر':
+    `${import.meta.env.BASE_URL}images/products/EL-bremo.jpg`,
+};
+
+
 function BrandWordmark({ size = 'small' }: { size?: 'small' | 'large' | 'hero' }) {
   return (
     <span className={`brand-wordmark brand-wordmark--${size}`} role="img" aria-label="الهرم">
@@ -179,11 +197,40 @@ function App() {
                   <div className="products-grid">
                     {group.visibleProducts.map((product, productIndex) => (
                       <article className="product-card" key={product}>
-                        <div className="photo-slot" aria-label={`مساحة مخصصة لصورة ${product}`}>
+                        
+<div
+  className="photo-slot"
+  aria-label={`صورة ${product}`}
+>
+  {productImages[product] ? (
+    <img
+      className="product-photo"
+      src={productImages[product]}
+      alt={`صورة ${product}`}
+      loading="lazy"
+    />
+  ) : (
+    <>
+      <span className="slot-code">
+        {String(productIndex + 1).padStart(2, '٠')} / صورة
+      </span>
+
+      <span className="slot-mark">
+        <Image size={19} strokeWidth={1.4} />
+      </span>
+
+      <span className="slot-caption">
+        مساحة صورة المنتج
+      </span>
+    </>
+  )}
+</div>
+
+                        {/* <div className="photo-slot" aria-label={`مساحة مخصصة لصورة ${product}`}>
                           <span className="slot-code">{String(productIndex + 1).padStart(2, '٠')} / صورة</span>
                           <span className="slot-mark"><Image size={19} strokeWidth={1.4} /></span>
                           <span className="slot-caption">مساحة صورة المنتج</span>
-                        </div>
+                        </div> */}
                         <div className="product-info">
                           <h4>{product}</h4>
                           <span className="product-type">{group.brand}</span>
