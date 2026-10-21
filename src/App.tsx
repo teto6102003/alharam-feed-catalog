@@ -69,6 +69,21 @@ const groups: ProductGroup[] = [
     title: 'أعلاف الفجر',
     products: [],
   },
+{
+  id: 'raw-materials',
+  brand: 'خامات',
+  title: 'خامات',
+  products: [
+    'دشيشه ناعم',
+    'دشيشة خشن',
+    'صويا ٤٦',
+    'شامى مستورد',
+    'شامي مطحون',
+    'شامي حصى',
+    'شامى محلى',
+  ],
+},
+
 ];
 
 const productImages: Record<string, string> = {
@@ -87,7 +102,8 @@ const productImages: Record<string, string> = {
   'خلطة مواشي سوبر':
     `${import.meta.env.BASE_URL}images/products/EL-bremo.jpg`,
 };
-
+const defaultProductImage =
+  `${import.meta.env.BASE_URL}images/products/default.jpeg`;
 
 function BrandWordmark({ size = 'small' }: { size?: 'small' | 'large' | 'hero' }) {
   return (
@@ -198,33 +214,24 @@ function App() {
                     {group.visibleProducts.map((product, productIndex) => (
                       <article className="product-card" key={product}>
                         
+
 <div
-  className="photo-slot"
+  className={`photo-slot ${
+    productImages[product] ? 'has-product-photo' : 'has-default-photo'
+  }`}
   aria-label={`صورة ${product}`}
 >
-  {productImages[product] ? (
-    <img
-      className="product-photo"
-      src={productImages[product]}
-      alt={`صورة ${product}`}
-      loading="lazy"
-    />
-  ) : (
-    <>
-      <span className="slot-code">
-        {String(productIndex + 1).padStart(2, '٠')} / صورة
-      </span>
-
-      <span className="slot-mark">
-        <Image size={19} strokeWidth={1.4} />
-      </span>
-
-      <span className="slot-caption">
-        مساحة صورة المنتج
-      </span>
-    </>
-  )}
+  <img
+    className={`product-photo ${
+      productImages[product] ? '' : 'product-photo--default'
+    }`}
+    src={productImages[product] ?? defaultProductImage}
+    alt={productImages[product] ? `صورة ${product}` : ''}
+    aria-hidden={productImages[product] ? undefined : true}
+    loading="lazy"
+  />
 </div>
+
 
                         {/* <div className="photo-slot" aria-label={`مساحة مخصصة لصورة ${product}`}>
                           <span className="slot-code">{String(productIndex + 1).padStart(2, '٠')} / صورة</span>
