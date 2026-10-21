@@ -100,6 +100,7 @@ function App() {
   const totalProducts = groups.reduce((sum, group) => sum + group.products.length, 0);
 
   return (
+    <>
     <div className="page-shell" dir="rtl">
       <header className="topbar">
         <div className="topbar-inner">
@@ -236,6 +237,11 @@ function App() {
         </div>
       </footer>
     </div>
+      {/* Permanent developer credit */}
+    <div className="developer-credit" dir="ltr">
+      Made by <strong>Eng. Steven Ibrahim</strong>
+    </div>
+  </>
   );
 }
 
