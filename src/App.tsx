@@ -300,7 +300,7 @@ function App() {
   target="_blank"
   rel="noopener noreferrer"
 >
-  <span>المنيا - بني محمد سلطان</span>
+  <span> المنيا - بني محمد سلطان </span>
   <span className="location-link-hint">
     اضغط لفتح الموقع على خرائط Google ↗
   </span>
