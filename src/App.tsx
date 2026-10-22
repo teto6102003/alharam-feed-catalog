@@ -69,6 +69,12 @@ const groups: ProductGroup[] = [
     title: 'أعلاف الفجر',
     products: [],
   },
+  {
+    id: 'El-bremo',
+    brand: 'أعلاف البريمو',
+    title: 'أعلاف البريمو',
+    products: ['خلطة اعلاف البريمو تسمين'],
+  },
 {
   id: 'raw-materials',
   brand: 'خامات',
@@ -99,8 +105,14 @@ const productImages: Record<string, string> = {
   'علف سوبر نامى':
     `${import.meta.env.BASE_URL}images/products/namy-eman.jpg`,
   
-  'خلطة مواشي سوبر':
+  'خلطة اعلاف البريمو تسمين':
     `${import.meta.env.BASE_URL}images/products/EL-bremo.jpg`,
+  'كسب العز ٥٠ ك ١٦٪؜ بروتين':
+    `${import.meta.env.BASE_URL}images/products/EZZ-16proten.jpg`,
+  'بياض العز ١٠ك &٢٥ ك' :
+    `${import.meta.env.BASE_URL}images/products/EZZ-14proten.jpg`,
+  'بادي نامي ٢٥ك ٢١٪؜ بروتين' :
+    `${import.meta.env.BASE_URL}images/products/EZZ-bady-namy.jpg`,
 };
 const defaultProductImage =
   `${import.meta.env.BASE_URL}images/products/default.jpeg`;
