@@ -293,7 +293,19 @@ function App() {
             </div>
             <div className="contact-field">
               <span className="field-label"><MapPin size={12} style={{ verticalAlign: 'middle', marginLeft: 5 }} /> الموقع والعنوان</span>
-              <span className="field-placeholder">يُضاف العنوان هنا</span>
+              
+<a
+  className="field-placeholder location-link"
+  href="https://maps.app.goo.gl/dWeCdeb4dKt28Xsm7?g_st=ic"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span>المنيا - بني محمد سلطان</span>
+  <span className="location-link-hint">
+    اضغط لفتح الموقع على خرائط Google ↗
+  </span>
+</a>
+
             </div>
           </div>
         </div>
