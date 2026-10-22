@@ -362,3 +362,26 @@
 .photo-slot.has-default-photo::before {
   display: none;
 }
+
+
+/* Google Maps address link */
+.location-link {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  border-bottom: none;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+.location-link-hint {
+  color: #d9bd7a;
+  font-size: 10px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.location-link:hover {
+  color: #e5c675;
+}
+
